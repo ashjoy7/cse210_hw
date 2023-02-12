@@ -101,3 +101,4 @@ class JournalApp
     {
         Console.WriteLine("Enter a file name:");
         Console.Write
+        
