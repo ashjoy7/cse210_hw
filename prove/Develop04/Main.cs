@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
         List<MindfulnessActivity> activities = new List<MindfulnessActivity>();
         while (true)
