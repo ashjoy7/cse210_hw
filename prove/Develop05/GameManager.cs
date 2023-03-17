@@ -59,4 +59,14 @@ public class GameManager
             }
         }
     }
+
+    internal List<Goal> GetCompletedGoals()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal int GetScore()
+    {
+        throw new NotImplementedException();
+    }
 }
