@@ -19,6 +19,10 @@ public class ReflectionActivity : MindfulnessActivity
         "How can you keep this experience in mind in the future?"
     };
 
+    public ReflectionActivity(string name, string description) : base(name, description)
+    {
+    }
+
     public ReflectionActivity(string name, string description, int timeInMinutes) : base(name, description)
     {
         this.TimeInMinutes = timeInMinutes;
@@ -29,6 +33,8 @@ public class ReflectionActivity : MindfulnessActivity
         get { return timeInMinutes; }
         set { timeInMinutes = value; }
     }
+
+    public object ReflectionCompletedCount { get; internal set; }
 
     public override void PerformActivity()
     {

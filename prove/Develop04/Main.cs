@@ -21,12 +21,12 @@ class Program
                         activities.Add(breathingActivity);
                         break;
                     case 2:
-                        var reflectionActivity = new ReflectionActivity("Reflection", "Reflect on past experiences", 5);
+                        var reflectionActivity = new ReflectionActivity("Reflection", "Reflect on past experiences");
                         reflectionActivity.PerformActivity();
                         activities.Add(reflectionActivity);
                         break;
                     case 3:
-                        var listingActivity = new ListingActivity("Listing", "List things that make you happy", 5);
+                        var listingActivity = new ListingActivity("Listing", "List things that make you happy");
                         listingActivity.PerformActivity();
                         activities.Add(listingActivity);
                         break;
