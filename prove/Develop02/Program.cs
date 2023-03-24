@@ -100,5 +100,23 @@ class JournalApp
     static void LoadJournalFromFile()
     {
         Console.WriteLine("Enter a file name:");
-        Console.Write
-        
+        Console.WriteLine("Enter a file name:");
+        Console.Write("> ");
+        string fileName = Console.ReadLine();
+
+        using (StreamReader reader = new StreamReader(fileName))
+        {
+            while (!reader.EndOfStream)
+            {
+                string prompt = reader.ReadLine();
+                string response = reader.ReadLine();
+                DateTime date = DateTime.Parse(reader.ReadLine());
+
+                JournalEntry entry = new JournalEntry(prompt, response, date);
+                journalEntries.Add(entry);
+            }
+        }
+
+        Console.WriteLine("Journal loaded from " + fileName + ".");
+    }
+}
