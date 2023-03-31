@@ -1,23 +1,21 @@
 using System;
 using System.Collections.Generic;
 
-class ProgramClass
+class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         List<Activity> activities = new List<Activity>();
 
-        // Create at least one activity of each type
-        Running running = new Running(new DateTime(2022, 11, 3), 30, 3.0);
+        Running running = new Running(new DateTime(2022, 11, 03), 30, 3.0);
         activities.Add(running);
 
-        StationaryBicycle stationaryBicycle = new StationaryBicycle(new DateTime(2022, 11, 3), 30, 25.0);
-        activities.Add(stationaryBicycle);
+        StationaryBike stationaryBike = new StationaryBike(new DateTime(2022, 11, 03), 30, 10.0);
+        activities.Add(stationaryBike);
 
-        Swimming swimming = new Swimming(new DateTime(2022, 11, 3), 30, 10);
+        Swimming swimming = new Swimming(new DateTime(2022, 11, 03), 30, 10);
         activities.Add(swimming);
 
-        // Iterate through the list and call the GetSummary method on each item and display the results
         foreach (Activity activity in activities)
         {
             Console.WriteLine(activity.GetSummary());

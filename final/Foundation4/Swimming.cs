@@ -1,29 +1,29 @@
-class Swimming : Activity
+public class Swimming : Activity
 {
-    private int _laps;
+    private int laps;
 
-    public Swimming(DateTime date, int length, int laps) : base(date, length)
+    public Swimming(DateTime date, int lengthInMinutes, int laps) : base(date, lengthInMinutes)
     {
-        _laps = laps;
+        this.laps = laps;
     }
 
     public override double GetDistance()
     {
-        return _laps * 50 / 1000;
+        return laps * 50.0 / 1000.0;
     }
 
     public override double GetSpeed()
     {
-        return GetDistance() / (_length / 60);
+        return GetDistance() / (lengthInMinutes / 60.0);
     }
 
     public override double GetPace()
     {
-        return (_length / 60) / GetDistance();
+        return (lengthInMinutes / GetDistance());
     }
 
     public override string GetSummary()
     {
-        return $"{_date.ToString("dd MMM yyyy")} Swimming ({_length} min): Distance {GetDistance():F1} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F1} min per km";
+        return $"{base.GetSummary()} - Distance: {GetDistance():F2} km, Speed: {GetSpeed():F1} kph, Pace: {GetPace():F1} min/km";
     }
 }

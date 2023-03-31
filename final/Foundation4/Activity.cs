@@ -1,12 +1,14 @@
-class Activity
-{
-    private DateTime _date;
-    private int _length;
+using System;
 
-    public Activity(DateTime date, int length)
+public class Activity
+{
+    private DateTime date;
+    protected int lengthInMinutes;
+
+    public Activity(DateTime date, int lengthInMinutes)
     {
-        _date = date;
-        _length = length;
+        this.date = date;
+        this.lengthInMinutes = lengthInMinutes;
     }
 
     public virtual double GetDistance()
@@ -26,6 +28,6 @@ class Activity
 
     public virtual string GetSummary()
     {
-        return "";
+        return $"{date.ToShortDateString()} {GetType().Name} ({lengthInMinutes} min)";
     }
 }
